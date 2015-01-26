@@ -1,0 +1,34 @@
+<!Doctype html>
+<html lang="en" ng-app="moviesDetails">
+    <head>
+        <meta charset="utf-8">
+        <title>basic App</title>
+        <link rel="stylesheet" href="css/bootstrap.css"/>
+        <link rel="stylesheet" href="css/app.css"/>
+        <link rel="stylesheet" href="css/stylesHome.css"/>
+    </head>
+   <body>
+        <div ng-view></div>
+        <!-- In production use:
+        <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.0.7/angular.min.js"></script>
+        -->
+        <script src="lib/angular/angular.js"></script>
+        <script src="lib/angular/angular-route.js"></script>
+       <!-- <script src="js/bootstrap.js"></script>-->
+
+        <script src="js/config/app.js"></script>
+
+        <script src="js/directives/loginDirective.js"></script>
+
+        <script src="js/controllers/loginController.js"></script>
+        <script src="js/services/loginService.js"></script>
+        <script src="js/controllers/moviesSearchController.js"></script>
+        <script src="js/services/moviesService.js"></script>
+        <!--    <script src="js/controllers/homeCtrl.js"></script>
+
+
+            <script src="js/services/sessionService.js"></script>-->
+
+   <!--runs here::    http://localhost:63342/logInApp/app/#/login-->
+    </body>
+ </html>

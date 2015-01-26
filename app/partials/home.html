@@ -1,0 +1,44 @@
+<div class="row">
+
+    <div class="col-lg-12 text-center v-center">
+        <p class="lead">Search for the movie name </p>
+
+        <br><br><br>
+
+        <form class="col-lg-12 col-sm-12" name="movieSearch">
+            <div class="input-group" style="width:340px;text-align:center;margin:0 auto;" ng-controller="SearchCtrl" ng-model="searchText">
+                <input class="form-control input-lg"  placeholder="Search a movie" name="searchTxt" type="text" ng-model="movies.searchTxt" required>
+                <span class="input-group-btn">
+                    <button
+                            class="btn btn-lg btn-primary" type="button" ng-disabled="movieSearch.$invalid" ng-click="initiateSearch(movies.searchTxt)">OK
+                    </button>
+                </span>
+            </div>
+        </form>
+    </div>
+
+</div> <!-- /row -->
+
+<br><br><br><br><br>
+
+</div> <!-- /container full -->
+
+<div class="container">
+
+    <hr>
+
+    <div class="row">
+        <div class="col-md-12 col-lg-12 col-sm-12">
+            <div class="panel panel-default">
+                <div class="panel-heading"><h3>Hello </h3></div>
+                <div class="panel-body">
+                    <ul id="suggestionList">
+                        <li ng-repeat="movie in movies" ng-click="$parent.searchText = movie.title">{{movie.title}}</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    </div>
