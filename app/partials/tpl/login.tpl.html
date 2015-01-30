@@ -8,19 +8,25 @@ A partial template for login screen
             <div class="modal-header">
                 <h1 class="text-center">Login</h1>
             </div>
-            <div class="modal-body"><span>Welcome {{user.mail}}</span>
+            <div class="form-horizontal">
                 <form class="form col-md-12 center-block" role="form" name="loginForm" >
-                    <div class="form-group">
-                        <input type="text" class="form-control input-lg" placeholder="Email" ng-model="user.mail" required>
-                    </div>
-                    <div class="form-group">
-                        <input type="password" class="form-control input-lg" placeholder="Password" ng-model="user.pass" required>
-                    </div>
-                    <div class="form-group">
-                        <button class="btn btn-primary btn-lg btn-block" ng-click="login(user)" ng-disabled="loginForm.$invalid">Sign In</button>
+                   <div class="input-group input-group-lg col-md-12 margin-bottom-sm customSpace">
+                          <span class="input-group-addon">
+                            <span class="glyphicon glyphicon-envelope"></span>
+                          </span>
+                        <input class="form-control" type="text" placeholder="Email address" ng-model="user.mail" required>
+                   </div>
+                   <div class="input-group input-group-lg col-md-12 margin-bottom-sm customSpace">
+                      <span class="input-group-addon">
+                        <span class="glyphicon glyphicon-lock"></span>
+                      </span>
+                        <input class="form-control" type="password" placeholder="Password" ng-model="user.pass" required>
+                   </div>
+                   <div class="form-group">
+                        <button class="btn btn-primary btn-lg center-block" ng-click="login(user)" ng-disabled="loginForm.$invalid">Sign In</button>
                         <p>{{msgTxt}}</p>
                         <span class="pull-right"><a href="#">Register</a></span><span><a href="#">Need help?</a></span>
-                    </div>
+                   </div>
                 </form>
             </div>
             <div class="modal-footer">

@@ -1,14 +1,15 @@
 /**
  * Created by Niraj_Kumar08 on 1/15/2015.
  */
+(function (){
+    'use strict';
 
-'use strict';
+    app.directive('loginDirective', function(){
 
-app.directive('loginDirective', function(){
+        return{
+            templateUrl:'partials/tpl/login.tpl.html'
+        }
 
+    });
 
-    return{
-        templateUrl:'partials/tpl/login.tpl.html'
-    }
-
-});
+})();

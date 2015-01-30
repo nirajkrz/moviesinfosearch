@@ -1,0 +1,46 @@
+<!--The Directive for displaying other Details after obtaining the result-->
+        <div class="col-md-12 col-lg-12 col-sm-12">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+
+                </div>
+                <div class="panel-body">
+                    <ul id="suggestionList" class="list-group">
+                        <li class="list-group-item clearfix" ng-repeat="movie in movies">
+
+                            <span class="movieposter">
+                            <a class="" target="_top" data-pageheader="" >
+                            <img ng-src="{{movie.posters.profile}}" width="85" height="120" alt="{{movie.title}}" title="{{movie.title}}">
+                            </a>
+                            </span>
+                            <span class="tmeter">
+                                <span class="review">
+                                               <span title="Certified&nbsp;Fresh" class="icon tiny certified"></span>
+                                                <span ng-class="{true: 'glyphicon glyphicon-thumbs-up', false: 'glyphicon glyphicon-thumbs-down'}[movie.ratings.critics_score >= 45]" ></span>
+                                                 <span>{{movie.ratings.critics_score}}
+                                                 </span>
+                                </span>
+
+                            </span>
+                             <span class="audienceRating">
+                                <span class="tMeterIcon  tiny">
+                                               <span title="Certified&nbsp;Fresh" class="icon tiny certified"></span>
+                                                <span class="tMeterScore"><span >{{movie.ratings.audience_score}}</span></span>
+                                 </span>
+                            </span>
+                            <div class="media-body">
+                                    <div class="nomargin media-heading bold">
+                                        <a class="unstyled articleLink" target="_top" data-pageheader="" href="#">{{movie.title}}</a>
+                                        <span class="movie_year"> {{movie.year}}</span>
+                                    </div>
+                                    <a class="unstyled articleLink" href="#" ng-repeat="cast in movie.abridged_cast" >{{cast.name}},</a>
+
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+<!--
+ng-class="{true: 'green', false: 'red'}[data.IsPositive]"-->
