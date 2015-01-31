@@ -1,0 +1,19 @@
+<div class="container">
+    <div class="alert alert-danger fade in" ng-show="errorOccurred">
+        <span class="close" data-dismiss="alert">&times;</span>
+        <strong>Error!</strong> A problem has occurred while submitting your data.
+    </div>
+    <div class="alert alert-info fade in" ng-show="networkIssue">
+        <span class="close" data-dismiss="alert">&times;</span>
+        <strong>Warning!</strong> There was a problem with your network connection.
+    </div>
+    <div class="alert alert-success fade in" ng-show="dataSuccess" >
+        <span class="close" data-dismiss="alert">&times;</span>
+        <strong>Success!</strong> Your Search is complete!!
+    </div>
+    <div class="alert alert-warning fade in" ng-show="warnTheUser">
+        <span class="close" data-dismiss="alert">&times;</span>
+        <strong>Note!</strong> Please enter more than 2 characters to search.
+    </div>
+
+</div>
