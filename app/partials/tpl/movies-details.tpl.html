@@ -40,7 +40,8 @@
                                         <span class="movie_year"> - {{movie.year}}</span>
                                     </div>
                                     <a class="unstyled articleLink" href="#" ng-repeat="cast in movie.abridged_cast" >{{cast.name}},</a>
-                                <div class="synopsis">Synopsis:- {{movie.synopsis }} </div>
+
+                                <div class="synopsis" ng-if="movie.synopsis !=''">Synopsis:- {{movie.synopsis }}</div>
 
                             </div>
                             </div>

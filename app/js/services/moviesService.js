@@ -5,7 +5,9 @@
 (function() {
     'use strict';
     angular.module('myApp.services', [])
-        .service('MovieDB', ['$q', '$http', function ($q, $http) {
+        .service('MovieDB', MoviesServiceFunc);
+    MoviesServiceFunc.$inject = ['$q', '$http'];
+    function MoviesServiceFunc($q, $http) {
             var API_URL = 'http://api.rottentomatoes.com/api/public/v1.0';
             var API_KEY = '34ymvz34c6ye7u57qm3cmez4';
             var moviesSearchUrl = API_URL + '/movies.json?apikey=' + API_KEY;
@@ -35,5 +37,5 @@
             };
 
 
-        }]);
+    }
 })();

@@ -5,7 +5,9 @@
 (function(){
     'use strict';
 
-    app.controller('loginController', function($scope, loginService, $location){
+    app.controller('loginController', LoginCtrlFunc);
+    LoginCtrlFunc.$inject = ["$scope", "loginService", "$location"];
+    function LoginCtrlFunc($scope, loginService, $location) {
         $scope.msgTxt='';
         $scope.login= function(user){
             console.log("Inside loginController");
@@ -13,6 +15,6 @@
             $location.path( "/home" );
         };
 
-    });
+    }
 
 })();

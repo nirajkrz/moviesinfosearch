@@ -3,7 +3,9 @@
  */
 (function(){
     'use strict';
-    app.controller('SearchCtrl', ['$scope', 'MovieDB', function($scope, MovieDB) {
+    app.controller('SearchCtrl', SearchControlFunction);
+    SearchControlFunction.$inject = ['$scope', 'MovieDB'];
+    function SearchControlFunction($scope, MovieDB) {
 
         $scope.initiateSearch = function (searchText) {
             console.log("input value provided::- " + searchText);
@@ -13,18 +15,20 @@
             $scope.errorOccurred= false;
             if (searchText.length > 2) {
                 MovieDB.getMovieData(searchText).then(function (data) {
-                    // promise fulfilled
-                    console.log("successFul Api call..!!");
-                //check if data returned has something in it
-                    if(data.movies.length >= 1) {
-                        $scope.movies = data.movies;
-                        $scope.dataAvailable = true;
-                        var key;
-                        for (key in $scope.movies) {
-                            console.log($scope.movies[key]);
+                    if (angular.isDefined(data)) {
+                        // promise fulfilled
+                        console.log("successFul Api call..!!");
+                        //check if data returned has something in it
+                        if (data.movies.length >= 1) {
+                            $scope.movies = data.movies;
+                            $scope.dataAvailable = true;
+                            var key;
+                            for (key in $scope.movies) {
+                                console.log($scope.movies[key]);
+                            }
+                        } else {
+                            $scope.errorOccurred = true;
                         }
-                    }else{
-                        $scope.errorOccurred= true;
                     }
                 }, function (error) {
                     // promise rejected, could log the error with: console.log('error', error);
@@ -39,5 +43,5 @@
         };
 
         //$scope.$watch('movies.searchTxt',  $scope.initiateSearch);
-    }]);
+    }
 })();
